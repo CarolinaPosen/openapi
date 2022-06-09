@@ -1,0 +1,50 @@
+openapi: 3.0.2
+info:
+  title: MyProject
+  version: "1.0.0"
+paths:
+  /users: #Запрос
+    get:
+      security:
+        - OAuth2:
+          - scope1
+          - scope2
+
+      description: Gets all users
+      responses: # Описание ответа
+        '200':
+          description: Gets an array of users
+          content:
+            application/json:
+              schema:
+                type: array # Массив пользователей
+                items:
+                  type: string # Строковые значения
+
+
+
+
+
+# Выше этой строки минимально работающая спецификация
+
+# Для переиспользования contenta используем:
+  /reuses: #Запрос
+    get:
+      description: Gets all reuses
+      responses: # Описание ответа
+        '200':
+          description: Gets an array of reuses
+          content:
+            application/json:
+              schema:
+                type: array # Массив пользователей
+                items:
+                  $ref: '#/components/schemas/Reuser'
+components:
+  schemas:
+    Reuser:
+      properties: # Описываемый в JSON объект
+        id:
+          type: integer
+        name:
+          type: string

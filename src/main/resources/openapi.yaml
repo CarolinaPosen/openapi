@@ -1,0 +1,53 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+  - url: http://localhost:8080
+    description: Generated server url
+paths:
+  /plains:
+    get:
+      tags:
+        - aircraft-controller
+      operationId: getAircrafts
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Aircraft'
+  /plains/{id}:
+    get:
+      tags:
+        - aircraft-controller
+      operationId: getAircraft
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Aircraft'
+components:
+  schemas:
+    Aircraft:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        model:
+          type: string
+        range:
+          type: integer
+          format: int32

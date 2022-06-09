@@ -1,0 +1,32 @@
+--DROP TABLE public.aircraft;
+--DROP TABLE public.flight;
+
+CREATE TABLE public."aircraft" (
+	id serial4 NOT null primary key,
+	model varchar(50) NOT null,
+	"range" int4 NULL
+);
+
+CREATE TABLE public."flight" (
+	id serial4 NOT null primary key,
+	aircraft_id int4 NOT null,
+	departure varchar(50) NULL,
+	arrival varchar(50) NULL
+);
+
+ALTER TABLE public."flight" ADD CONSTRAINT flight_fk FOREIGN KEY (aircraft_id) REFERENCES public.aircraft(id);
+
+insert into "aircraft"(model, "range")
+values
+('Airbus', 3000),
+('TU-134', 1000),
+('Boing', 5000);
+
+insert into "flight"(aircraft_id, departure, arrival)
+values
+(1, 'Vitebsk', 'Mogilev'),
+(2, 'Gomel', 'Minsk'),
+(3, 'Brest', 'Grodno');
+
+
+

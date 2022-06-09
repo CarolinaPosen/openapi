@@ -1,0 +1,36 @@
+<plugin>
+                <groupId>org.openapitools</groupId>
+                <artifactId>openapi-generator-maven-plugin</artifactId>
+                <version>4.3.1</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+
+                        <configuration>
+                            <generatorName>spring</generatorName>
+                            <inputSpec>openapi.yaml</inputSpec>
+                            <library>spring-boot</library>
+                            <output>${project.basedir}</output>
+
+                            <configOptions>
+                                <serializableModel>true</serializableModel>
+
+                                <artifactId>${project.artifactId}</artifactId>
+                                <groupId>${project.groupId}</groupId>
+                                <version>${project.version}</version>
+                                <dateLibrary>java8</dateLibrary>
+                                <sourceFolder>target</sourceFolder>
+                                <basePackage>eu.senla.aircraft</basePackage>
+                                <invokerPackage>eu.senla.aircraft</invokerPackage>
+                                <configPackage>eu.senla.aircraft.config</configPackage>
+                                <modelPackage>eu.senla.aircraft.model</modelPackage>
+                                <apiPackage>eu.senla.aircraft.api</apiPackage>
+                            </configOptions>
+
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
