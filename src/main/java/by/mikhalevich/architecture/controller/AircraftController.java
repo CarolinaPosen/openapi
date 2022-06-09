@@ -58,13 +58,13 @@ public class AircraftController {
 
     @Operation(summary = "Short description", description = "Long description")
     @PostMapping(path = "/api/aircrafts")
-    public ResponseEntity<Aircraft> createGroup(@RequestBody @NotNull Aircraft aircraft) {
+    public ResponseEntity<Aircraft> createAircraft(@RequestBody @NotNull Aircraft aircraft) {
         Aircraft createAircraft = repository.save(aircraft);
         return ResponseEntity.ok(createAircraft);
     }
 
     @PutMapping(path = "/api/aircrafts")
-    public ResponseEntity<Aircraft> updateGroup(@RequestBody Aircraft aircraft) {
+    public ResponseEntity<Aircraft> updateAircraft(@RequestBody Aircraft aircraft) {
         Aircraft savedAircraft = repository.save(aircraft);
         return ResponseEntity.ok(savedAircraft);
     }
