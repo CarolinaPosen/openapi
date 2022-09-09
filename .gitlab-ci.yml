@@ -4,4 +4,4 @@ stages:
 deploy-job:
   stage: deploy
   script:
-    - echo "Hello CI/CD..."
+    - echo "Hello CI/CD...."
