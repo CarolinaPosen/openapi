@@ -37,7 +37,7 @@ import java.util.List;
         @ApiResponse(responseCode = "201", description = "The Aircraft has been correctly deleted."),
         @ApiResponse(responseCode = "400", description = "The transaction schema is invalid."),
         @ApiResponse(responseCode = "415", description = "The content type is unsupported"),
-        @ApiResponse(responseCode = "501", description = "An unexpected error has occurred.") })
+        @ApiResponse(responseCode = "502", description = "An unexpected error has occurred.") })
 public class AircraftController {
 
     private final AircraftCrudRepository repository;
