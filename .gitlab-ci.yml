@@ -41,8 +41,8 @@ package_job:
 
   script:
     - echo "Maven packaging started"
+    - echo "Maven packaging started"
     - "mvn package"
-
 
 Deploy_job:
   stage: deploy
