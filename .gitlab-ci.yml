@@ -4,4 +4,4 @@ stages:
 deploy-job:
   stage: deploy
   script:
-    - echo "Hello CI/CD....Main 504!"
+    - echo "Hello CI/CD....Main 504 !"
