@@ -1,3 +1,8 @@
-tag:
-    script:
-        - echo "This is a first sample job"
+stages:
+  - deploy
+
+deploy-job:
+  stage: deploy
+  script:
+    - echo "Deploying application..."
+    - echo "Application successfully deployed."
